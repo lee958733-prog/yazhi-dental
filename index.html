@@ -4,13 +4,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>雅致口腔 - 应城20年口腔品牌 | 医保定点 · 微创种植 · 专业矫正</title>
-<meta name="description" content="雅致口腔，2004年创立，湖北本土口腔连锁品牌。应城市医保定点+异地就医定点医疗机构。宋杰副主任医师领衔，微创种植、牙齿矫正、补牙洗牙、儿童齿科。中百院区：汉宜大道蒲城名都；大智院区：古城大道与大智路交汇处。">
+<meta name="description" content="雅致口腔，2004年创立，湖北本土口腔连锁品牌。应城市医保定点+异地就医定点医疗机构。宋杰副主任医师领衔9人医师团队。微创种植、牙齿矫正、补牙洗牙、儿童齿科、美学修复、镶牙义齿。中百院区：汉宜大道蒲城名都；大智路院区：古城大道与大智路交汇处。营业时间08:00-18:00周末正常。">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://lee958733-prog.github.io/yazhi-dental/">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%230066CC'/%3E%3Ctext x='50' y='68' text-anchor='middle' font-size='48' fill='%23fff' font-family='serif'%3E雅%3C/text%3E%3C/svg%3E">
 
 <meta property="og:title" content="雅致口腔 - 应城20年口腔品牌 | 医保定点 · 微创种植 · 专业矫正">
-<meta property="og:description" content="雅致口腔，2004年创立，湖北本土口腔连锁品牌。应城市医保定点+异地就医定点。宋杰副主任医师领衔，微创种植、牙齿矫正、补牙洗牙、儿童齿科。">
+<meta property="og:description" content="雅致口腔，2004年创立，湖北本土口腔连锁品牌。应城市医保定点+异地就医定点。宋杰副主任医师领衔9人医师团队，微创种植、牙齿矫正、补牙洗牙、儿童齿科、美学修复。">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://lee958733-prog.github.io/yazhi-dental/">
 <meta property="og:image" content="https://lee958733-prog.github.io/yazhi-dental/og-image.png">
@@ -140,6 +140,8 @@
   .service-card:hover { transform: translateY(-2px); box-shadow: 0 4px 14px rgba(0,0,0,0.08); }
   .service-card .icon { font-size: 2em; margin-bottom: 8px; display: block; }
   .service-card .sname { font-size: 0.95em; font-weight: 600; color: #333; }
+  .service-card .sprice { font-size: 0.85em; color: #0066CC; font-weight: 500; margin-top: 4px; }
+  .service-card .sdoc { font-size: 0.78em; color: #999; margin-top: 2px; }
 
   /* Contact */
   #contact .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
@@ -164,6 +166,60 @@
   footer .disclaimer { max-width: 700px; margin: 0 auto 16px; color: #999; }
   footer .icp { color: #777; }
 
+  /* Qualifications */
+  .qual-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; max-width: 700px; margin: 0 auto; }
+  .qual-card {
+    background: #fff; border-radius: 12px; padding: 28px 20px; text-align: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05); border: 1px solid #e8f0fe;
+  }
+  .qual-card .q-icon { font-size: 2em; margin-bottom: 10px; display: block; }
+  .qual-card .q-name { font-size: 1em; font-weight: 600; color: #0066CC; }
+  .qual-card .q-desc { font-size: 0.85em; color: #666; margin-top: 6px; }
+
+  /* Equipment */
+  .equip-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; max-width: 700px; margin: 0 auto; }
+  .equip-card {
+    background: #fff; border-radius: 12px; padding: 24px 20px; display: flex; gap: 16px; align-items: flex-start;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  }
+  .equip-card .e-icon { font-size: 2em; flex-shrink: 0; }
+  .equip-card .e-detail h4 { font-size: 0.95em; color: #333; margin-bottom: 4px; }
+  .equip-card .e-detail p { font-size: 0.82em; color: #666; }
+
+  /* Service detail */
+  .service-detail { display: none; max-width: 700px; margin: 16px auto 0; }
+  .service-detail.active { display: block; }
+
+  /* FAQ */
+  .faq-list { max-width: 750px; margin: 0 auto; }
+  .faq-item {
+    background: #fff; border-radius: 10px; margin-bottom: 12px;
+    box-shadow: 0 1px 6px rgba(0,0,0,0.04); overflow: hidden;
+  }
+  .faq-q {
+    padding: 16px 20px; font-weight: 600; font-size: 0.92em; color: #333;
+    cursor: pointer; display: flex; justify-content: space-between; align-items: center;
+    user-select: none;
+  }
+  .faq-q:hover { background: #f8faff; }
+  .faq-q .arrow { color: #0066CC; transition: transform 0.2s; }
+  .faq-q.open .arrow { transform: rotate(180deg); }
+  .faq-a {
+    max-height: 0; overflow: hidden; transition: max-height 0.3s ease;
+    font-size: 0.88em; color: #555; line-height: 1.7; padding: 0 20px;
+  }
+  .faq-a.open { max-height: 500px; padding: 0 20px 16px; }
+
+  /* Concept / brand story */
+  .concept-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; max-width: 800px; margin: 0 auto; }
+  .concept-card {
+    background: #fff; border-radius: 12px; padding: 28px 20px; text-align: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  }
+  .concept-card .c-icon { font-size: 2em; margin-bottom: 10px; }
+  .concept-card .c-name { font-weight: 600; font-size: 0.95em; color: #333; }
+  .concept-card .c-desc { font-size: 0.82em; color: #666; margin-top: 6px; }
+
   /* Mobile */
   @media (max-width: 768px) {
     nav { padding: 0 16px; }
@@ -175,12 +231,15 @@
     .hero .subtitle { font-size: 0.9em; }
     section { padding: 40px 16px; }
     .locations-grid { grid-template-columns: 1fr; }
-    .doctors-grid { grid-template-columns: 1fr; }
+    .doctors-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
     .services-grid { grid-template-columns: repeat(2, 1fr); }
     #contact .contact-grid { grid-template-columns: 1fr; }
     .intro-card { padding: 28px 20px; }
     .intro-card .stats { flex-direction: column; }
     .section-title { font-size: 1.3em; }
+    .qual-grid { grid-template-columns: 1fr; }
+    .equip-grid { grid-template-columns: 1fr; }
+    .concept-grid { grid-template-columns: 1fr; }
   }
 
   @media (max-width: 1024px) and (min-width: 769px) {
@@ -271,6 +330,8 @@
     <li><a href="#locations">院区</a></li>
     <li><a href="#doctors">医生</a></li>
     <li><a href="#services">服务</a></li>
+    <li><a href="#qualifications">资质</a></li>
+    <li><a href="#faq">FAQ</a></li>
     <li><a href="#contact">联系</a></li>
   </ul>
 </nav>
@@ -291,14 +352,33 @@
   <h2 class="section-title">品牌简介</h2>
   <div class="intro-card">
     <p><strong>雅致口腔</strong> 2004年创立，为傲齿口腔全国连锁品牌的湖北成员，深耕口腔医疗领域20年以上。由创始人宋杰副主任医师领衔，秉承「雅致生活·齿生相伴」的服务理念，致力于为应城及周边居民提供专业、安全、舒适的口腔诊疗服务。</p>
-    <p>门诊面积约1000㎡，配备10余台牙椅，引进卡瓦（KaVo）CBCT三维影像设备和数字化口扫系统，实现从检查到治疗的全流程数字化。</p>
+    <p>门诊面积约1000㎡，配备10余台牙椅，拥有30余人医护团队。引进卡瓦（KaVo）CBCT三维影像设备和数字化口扫系统，实现从检查到治疗的全流程数字化诊疗。</p>
     <div class="stats">
       <div class="item"><span class="num">2004</span><span class="label">品牌创立</span></div>
-      <div class="item"><span class="num">37,625+</span><span class="label">服务人次*</span></div>
+      <div class="item"><span class="num">37,625+</span><span class="label">服务人次</span></div>
       <div class="item"><span class="num">1,000㎡</span><span class="label">门诊面积</span></div>
       <div class="item"><span class="num">10+</span><span class="label">牙椅数量</span></div>
     </div>
-    <p style="margin-top:16px; font-size:0.8em; color:#999;">*数据来源于门诊内部统计</p>
+    <p style="margin-top:16px; font-size:0.8em; color:#999;">*部分数据来源于门诊内部统计</p>
+  </div>
+
+  <h2 class="section-title" style="margin-top:60px;">品牌理念</h2>
+  <div class="concept-grid">
+    <div class="concept-card">
+      <div class="c-icon">🏆</div>
+      <div class="c-name">院训</div>
+      <div class="c-desc">专业人做专业事<br>匠心护齿暖人心</div>
+    </div>
+    <div class="concept-card">
+      <div class="c-icon">💎</div>
+      <div class="c-name">品牌理念</div>
+      <div class="c-desc">雅致生活·齿生相伴<br>品质医疗·温暖服务</div>
+    </div>
+    <div class="concept-card">
+      <div class="c-icon">🤝</div>
+      <div class="c-name">品质承诺</div>
+      <div class="c-desc">一人一方案<br>个性化精准诊疗</div>
+    </div>
   </div>
 </section>
 
@@ -501,18 +581,57 @@
   </div>
 </section>
 
+<!-- Qualifications -->
+<section id="qualifications" aria-label="资质认证" style="background:#f0f6ff;padding:60px 24px;">
+  <div style="max-width:1100px;margin:0 auto;">
+    <h2 class="section-title">资质认证</h2>
+    <div class="qual-grid">
+      <div class="qual-card">
+        <span class="q-icon">🛡️</span>
+        <div class="q-name">医保定点医疗机构</div>
+        <div class="q-desc">应城市医疗保障局定点医疗机构，刷医保看牙更省心</div>
+      </div>
+      <div class="qual-card">
+        <span class="q-icon">🌐</span>
+        <div class="q-name">异地就医定点</div>
+        <div class="q-desc">湖北省异地就医定点医疗机构，省内跨市医保均可使用</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Equipment -->
+<section id="equipment" aria-label="诊疗设备">
+  <h2 class="section-title">诊疗设备</h2>
+  <div class="equip-grid">
+    <div class="equip-card">
+      <div class="e-icon">📡</div>
+      <div class="e-detail">
+        <h4>卡瓦（KaVo）CBCT三维影像</h4>
+        <p>国际知名品牌，三维立体成像，精准定位神经管和种植区域，为种植和正畸提供精准诊断依据</p>
+      </div>
+    </div>
+    <div class="equip-card">
+      <div class="e-icon">🔍</div>
+      <div class="e-detail">
+        <h4>数字化口扫系统</h4>
+        <p>告别传统取模不适感，3D扫描快速获取牙齿数据，矫正方案可视可预见</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- Services -->
 <section id="services" aria-label="服务项目">
   <h2 class="section-title">服务项目</h2>
   <div class="services-grid">
-    <div class="service-card"><span class="icon" aria-hidden="true">🦷</span><span class="sname">种植牙</span></div>
-    <div class="service-card"><span class="icon" aria-hidden="true">😁</span><span class="sname">牙齿矫正</span></div>
-    <div class="service-card"><span class="icon" aria-hidden="true">🔧</span><span class="sname">补牙</span></div>
-    <div class="service-card"><span class="icon" aria-hidden="true">✨</span><span class="sname">洗牙</span></div>
-    <div class="service-card"><span class="icon" aria-hidden="true">👶</span><span class="sname">儿童齿科</span></div>
-    <div class="service-card"><span class="icon" aria-hidden="true">🦷</span><span class="sname">美学修复</span></div>
-    <div class="service-card"><span class="icon" aria-hidden="true">💎</span><span class="sname">瓷贴面</span></div>
-    <div class="service-card"><span class="icon" aria-hidden="true">🔄</span><span class="sname">镶牙/义齿</span></div>
+    <div class="service-card"><span class="icon" aria-hidden="true">🦷</span><span class="sname">种植牙</span><div class="sprice">国产3980起/韩系进口4980起</div><div class="sdoc">宋杰副主任医师主诊</div></div>
+    <div class="service-card"><span class="icon" aria-hidden="true">😁</span><span class="sname">牙齿矫正</span><div class="sprice">金属/半隐形/隐形矫正</div><div class="sdoc">吕玉华+何文蓉联合诊疗</div></div>
+    <div class="service-card"><span class="icon" aria-hidden="true">🔧</span><span class="sname">补牙</span><div class="sprice">树脂充填180-380元</div><div class="sdoc">医保可刷</div></div>
+    <div class="service-card"><span class="icon" aria-hidden="true">✨</span><span class="sname">洗牙</span><div class="sprice">超声波洁牙80-120元</div><div class="sdoc">双院区均可预约</div></div>
+    <div class="service-card"><span class="icon" aria-hidden="true">👶</span><span class="sname">儿童齿科</span><div class="sprice">涂氟·窝沟封闭·早期矫治</div><div class="sdoc">何文蓉主诊·独立儿童特诊室</div></div>
+    <div class="service-card"><span class="icon" aria-hidden="true">💎</span><span class="sname">美学修复</span><div class="sprice">全瓷贴面·树脂美学修复</div><div class="sdoc">个性化美学设计</div></div>
+    <div class="service-card"><span class="icon" aria-hidden="true">🔄</span><span class="sname">镶牙/义齿</span><div class="sprice">烤瓷牙/全瓷牙/活动假牙</div><div class="sdoc">各类义齿修复方案</div></div>
   </div>
 </section>
 
@@ -536,14 +655,57 @@
   </div>
 </section>
 
-</main>
+
+<!-- FAQ -->
+<section id="faq" aria-label="常见问题" style="background:#f0f6ff;padding:60px 24px;">
+  <div style="max-width:1100px;margin:0 auto;">
+    <h2 class="section-title">常见问题</h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open')">
+          种植牙疼不疼？能用多久？
+          <span class="arrow">▾</span>
+        </div>
+        <div class="faq-a">种植牙手术在局部麻醉下进行，术中基本无痛感。术后可能会出现轻度肿胀，一般3-5天消退。正常使用和维护下，种植牙可使用20年以上。我院由宋杰副主任医师主刀，采用微创数字化种植技术，创伤小、恢复快。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open')">
+          牙齿矫正需要多长时间？
+          <span class="arrow">▾</span>
+        </div>
+        <div class="faq-a">一般矫正周期为1.5-3年，具体时间取决于错颌畸形程度和矫正方案。吕玉华主治医师和何文蓉主治医师会根据您的牙齿情况制定个性化的矫正方案，金属/半隐形/隐形矫正均有。矫正期间需定期复诊，配合佩戴保持器。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open')">
+          补牙能刷医保吗？多少钱？
+          <span class="arrow">▾</span>
+        </div>
+        <div class="faq-a">雅致口腔是应城市医保定点医疗机构，补牙（树脂充填180-380元）可刷医保。具体报销比例以医保政策为准，建议到院时携带医保卡咨询前台。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open')">
+          孩子多大可以看牙？儿童看牙害怕怎么办？
+          <span class="arrow">▾</span>
+        </div>
+        <div class="faq-a">建议3岁起定期口腔检查和涂氟/窝沟封闭。我院何文蓉主治医师、吴紫蔓医师和曾梦婷医师擅长儿童就诊行为诱导，能通过温和耐心的沟通让孩子放松配合。门诊设有独立儿童特诊室，打造轻松温馨的看牙体验。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open')">
+          两个院区有什么区别？该去哪个？
+          <span class="arrow">▾</span>
+        </div>
+        <div class="faq-a">两个院区医生团队统一调配，服务标准一致。中百院区位于汉宜大道蒲城名都，大智路院区位于古城大道与大智路交汇处。建议您就近选择，周末及节假日正常营业（08:00-18:00）。</div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- Footer -->
 <footer>
   <p class="disclaimer">
-    ⚕️ 免责声明：本网站内容仅供科普参考，不构成医疗建议。部分数据来源于门诊内部统计，未经第三方审计。以上价格为参考价，以面诊方案为准。口腔诊疗请到正规医疗机构面诊。
+    免责声明：本网站内容仅供科普参考，不构成医疗建议
   </p>
-  <p>© 2026 雅致口腔 ｜ 鄂ICP备XXXXXXXX号-1（待备案）</p>
+  <p>© 2026 雅致口腔</p>
 </footer>
 
 </body>
