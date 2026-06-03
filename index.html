@@ -110,19 +110,25 @@
   .doctor-card .name { font-size: 1.15em; font-weight: 600; }
   .doctor-card .title { font-size: 0.88em; color: #0066CC; margin: 4px 0 10px; font-weight: 500; }
   .doctor-card .desc { font-size: 0.85em; color: #666; line-height: 1.6; text-align: left; padding: 0 4px; }
-  .doctor-card .desc li { list-style: none; padding: 3px 0; }
-  .doctor-card .desc li::before { content: '▸ '; color: #0066CC; }
+  .doctor-card .meta { list-style: none; padding: 0; margin: 10px 0 12px; }
+  .doctor-card .meta li {
+    font-size: 0.82em; color: #555; padding: 3px 0; text-align: center;
+  }
+  .doctor-card .meta li::before { content: '• '; color: #0066CC; }
 
-  /* Doctor tags */
-  .doc-tags { display: flex; flex-wrap: wrap; gap: 6px; justify-content: center; margin: 10px 0 14px; }
-  .doc-tags span {
-    display: inline-block; padding: 3px 10px; border-radius: 12px;
-    font-size: 0.75em; background: #e8f0fe; color: #0066CC; font-weight: 500;
+  /* Doctor goodats */
+  .doc-goodats {
+    font-size: 0.82em; color: #444; line-height: 1.65; padding: 10px 8px;
+    background: #f8faff; border-radius: 8px; margin: 10px 0 8px; text-align: left;
   }
-  .doc-detail {
-    font-size: 0.82em; color: #555; line-height: 1.65; text-align: left; padding: 0 4px;
+  .doc-goodats strong { color: #0066CC; display: block; margin-bottom: 4px; font-size: 0.88em; }
+  .doc-goodats .sep { color: #999; margin: 0 3px; }
+
+  /* Doctor motto */
+  .doc-motto {
+    font-size: 0.8em; color: #888; font-style: italic;
+    padding: 6px 0 2px; border-top: 1px dashed #e0e0e0; margin-top: 8px;
   }
-  .doc-detail strong { color: #333; }
 
   /* Services */
   .services-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
@@ -229,9 +235,9 @@
   "parentOrganization": { "@type": "Organization", "name": "傲齿口腔全国连锁" },
   "medicalSpecialty": "Dentistry",
   "employee": [
-    { "@type": "Physician", "name": "宋杰", "jobTitle": "院长·创始人·副主任医师", "medicalSpecialty": "Dentistry", "description": "武汉大学医学院毕业，20余年口腔临床经验。雅致口腔创始人、院长。微创数字化种植技术专家，国家卫健委+人社部双认证。擅长微创种植、半口/全口种植、即刻种植、数字化导板种植、GBR骨增量技术等。" },
-    { "@type": "Physician", "name": "吕玉华", "jobTitle": "主治医师", "medicalSpecialty": "Dentistry", "description": "30余年口腔医学临床经验，湖北省口腔医学会修复专委会委员。北上广多家权威医院进修深造。擅长青少年与成人错颌畸形矫治、全瓷美学修复、口腔颌面部畸形美学改善、种植修复及全口活动牙修复。" },
-    { "@type": "Physician", "name": "何文蓉", "jobTitle": "主治医师", "medicalSpecialty": "Dentistry", "description": "武大口腔医院进修，湖北省口腔医学会正畸专委会委员。十余年口腔临床经验，性格温和有耐心，诊疗作风严谨细致。擅长儿童早期牙齿矫正、青少年正畸矫治、根管治疗、各类口腔修复。" }
+    { "@type": "Physician", "name": "宋杰", "jobTitle": "院长·创始人·副主任医师", "medicalSpecialty": "Dentistry", "description": "武汉大学医学院毕业，国家卫健委+人社部双认证，20余年口腔医学临床经验。雅致口腔创始人、院长。精研微创数字化种植、半口/全口种植、即刻种植、数字化导板种植、GBR骨增量、穿翼板/穿颧种植等。" },
+    { "@type": "Physician", "name": "吕玉华", "jobTitle": "主治医师", "medicalSpecialty": "Dentistry", "description": "30余年口腔医学临床经验，湖北省口腔医学会修复专委会委员。北上广多家权威医院进修深造。擅长青少年与成人错颌畸形矫治、全瓷美学修复、口腔颌面部畸形美学改善、种植牙修复、全口活动牙修复。" },
+    { "@type": "Physician", "name": "何文蓉", "jobTitle": "主治医师", "medicalSpecialty": "Dentistry", "description": "武大口腔医院进修，湖北省口腔医学会正畸专委会委员。十余年口腔临床经验，性格温和有耐心，擅长儿童就诊配合行为诱导。擅长儿童早期咬合诱导、青少年正畸矫治、根管治疗、儿童口腔常见疾病防治。" }
   ],
   "makesOffer": [
     { "@type": "Offer", "itemOffered": { "@type": "MedicalProcedure", "name": "种植牙", "description": "国产3980起/韩系进口4980起，宋杰副主任医师主诊" } },
@@ -319,49 +325,64 @@
       <div class="avatar" aria-hidden="true">宋</div>
       <div class="name">宋杰</div>
       <div class="title">副主任医师 · 院长 · 创始人</div>
-      <div class="doc-tags">
-        <span>微创种植</span><span>即刻种植</span><span>半口/全口种植</span><span>GBR骨增量</span>
-      </div>
-      <ul class="desc">
-        <li>武汉大学医学院毕业，20年+临床经验</li>
-        <li>微创数字化种植技术</li>
+      <ul class="meta">
+        <li>武汉大学医学院（毕业学院）</li>
         <li>国家卫健委+人社部双认证</li>
+        <li>20余年口腔医学临床经验</li>
+        <li>雅致口腔创始人，应城微创种植技术先行者</li>
       </ul>
-      <div class="doc-detail">
-        <strong>擅长：</strong>微创种植、半口/全口种植、即刻种植、数字化导板种植、GBR骨增量技术。年均完成种植案例百余例，是应城地区开展穿翼板种植、穿颧种植等复杂术式的先行者。
+      <div class="doc-goodats">
+        <strong>【特别擅长】</strong>
+        微创数字化种植<span class="sep">|</span>半口/全口种植<span class="sep">|</span>
+        即刻种植<span class="sep">|</span>数字化导板种植<span class="sep">|</span>
+        GBR骨增量技术<span class="sep">|</span>穿翼板/穿颧种植
+      </div>
+      <div class="doc-motto">
+        「精研微创种植，守护每一口好牙」
       </div>
     </div>
     <div class="doctor-card">
       <div class="avatar" aria-hidden="true">吕</div>
       <div class="name">吕玉华</div>
       <div class="title">主治医师</div>
-      <div class="doc-tags">
-        <span>矫正修复</span><span>美学修复</span><span>全瓷修复</span><span>种植修复</span>
-      </div>
-      <ul class="desc">
-        <li>30年+口腔医学临床经验</li>
+      <ul class="meta">
+        <li>北上广多家权威医院（进修医院）</li>
         <li>湖北省口腔医学会修复专委会委员</li>
-        <li>北上广多家权威医院进修</li>
+        <li>30余年口腔医学临床经验</li>
+        <li>青少年与成人错颌畸形矫治专家</li>
       </ul>
-      <div class="doc-detail">
-        <strong>擅长：</strong>青少年与成人错颌畸形矫治、全瓷美学修复、口腔颌面部畸形美学改善、种植牙修复及全口活动牙修复。诊疗作风严谨细致，坚持"一人一方案"的个性化诊疗策略。
+      <div class="doc-goodats">
+        <strong>【特别擅长】</strong>
+        青少年与成人错颌畸形矫治<span class="sep">|</span>
+        全瓷美学修复<span class="sep">|</span>
+        口腔颌面部畸形美学改善<span class="sep">|</span>
+        种植牙修复<span class="sep">|</span>
+        全口活动牙修复
+      </div>
+      <div class="doc-motto">
+        「一人一方案，匠心雕琢每一颗牙」
       </div>
     </div>
     <div class="doctor-card">
       <div class="avatar" aria-hidden="true">何</div>
       <div class="name">何文蓉</div>
       <div class="title">主治医师</div>
-      <div class="doc-tags">
-        <span>儿牙矫正</span><span>青少年正畸</span><span>根管治疗</span><span>口腔修复</span>
-      </div>
-      <ul class="desc">
-        <li>武大口腔医院进修</li>
+      <ul class="meta">
+        <li>武大口腔医院（进修医院）</li>
         <li>湖北省口腔医学会正畸专委会委员</li>
         <li>十余年口腔医学临床经验</li>
-        <li>性格温和有耐心，儿童友好</li>
+        <li>性格温和有耐心，儿童就诊行为诱导擅长</li>
       </ul>
-      <div class="doc-detail">
-        <strong>擅长：</strong>儿童早期牙齿矫正（咬合诱导/功能矫治）、青少年正畸矫治（固定矫正/隐形矫正）、根管治疗、各类口腔修复。尤其擅长与儿童沟通，打造温馨轻松的儿童就诊体验。
+      <div class="doc-goodats">
+        <strong>【特别擅长】</strong>
+        儿童早期牙齿矫正（咬合诱导/功能矫治）<span class="sep">|</span>
+        青少年正畸矫治（固定矫正/隐形矫正）<span class="sep">|</span>
+        根管治疗<span class="sep">|</span>
+        儿童就诊配合行为诱导<span class="sep">|</span>
+        各类口腔修复
+      </div>
+      <div class="doc-motto">
+        「用耐心和温柔，让孩子笑着看牙」
       </div>
     </div>
   </div>
