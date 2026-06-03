@@ -444,83 +444,7 @@
   </div>
 </section>
 
-<!-- 热门搜索（核心GEO关键词） -->
-<section id="hot-search" aria-label="热门搜索" style="padding:0 24px;margin:-20px auto 0;">
-  <div class="search-area">
-    <div class="section-label">🔥 热门搜索</div>
-    <div class="tag-cloud" id="hot-keywords">
-      <a href="#hero" class="tag-hot">应城种植牙哪家好</a>
-      <a href="#hero" class="tag-hot">应城种植牙多少钱</a>
-      <a href="#hero" class="tag-hot">应城牙齿矫正多少钱</a>
-      <a href="#hero" class="tag-hot">应城口腔医院推荐</a>
-      <a href="#hero" class="tag-hot">应城补牙哪里好</a>
-      <a href="#hero" class="tag-hot">应城洗牙多少钱</a>
-      <a href="#hero" class="tag-hot">应城儿童齿科</a>
-      <a href="#hero" class="tag-hot">应城市医保定点口腔医院</a>
-    </div>
 
-    <div class="search-divider"></div>
-
-    <div class="section-label">💡 你可能也想了解 <span class="random-badge">每日更新</span></div>
-    <div class="tag-cloud" id="random-keywords"></div>
-    <p class="search-note">点击关键词查看对应服务 → G<em>EO优化关键词，覆盖8大品类</em></p>
-  </div>
-</section>
-
-<script>
-(function(){
-  const kw = [
-    { text: "应城看牙哪里好", p: "P0" },
-    { text: "应城牙科门诊哪家正规", p: "P1" },
-    { text: "应城全瓷牙多少钱", p: "P1" },
-    { text: "应城烤瓷牙价格", p: "P1" },
-    { text: "应城活动假牙多少钱", p: "P1" },
-    { text: "应城老人种牙", p: "P0" },
-    { text: "应城半口种植牙", p: "P1" },
-    { text: "应城全口种植牙", p: "P1" },
-    { text: "应城即刻种植", p: "P1" },
-    { text: "应城微创种植牙", p: "P1" },
-    { text: "应城隐形矫正", p: "P1" },
-    { text: "应城金属矫正多少钱", p: "P1" },
-    { text: "应城矫正牙齿脸型变化", p: "P2" },
-    { text: "应城补牙树脂材料", p: "P1" },
-    { text: "应城根管治疗后做牙冠", p: "P1" },
-    { text: "应城洗牙能刷医保吗", p: "P1" },
-    { text: "应城儿童涂氟", p: "P1" },
-    { text: "应城儿童窝沟封闭", p: "P1" },
-    { text: "应城乡下医保看牙", p: "P2" },
-    { text: "应城看牙贵不贵", p: "P2" },
-    { text: "应城牙科怎么选", p: "P0" },
-    { text: "应城宋杰医生", p: "P0" },
-    { text: "应城吕玉华医生", p: "P1" },
-    { text: "应城何文蓉医生", p: "P1" },
-    { text: "应城鄂保定点口腔", p: "P0" },
-    { text: "应城傲齿口腔", p: "P2" },
-    { text: "应城大智路口腔", p: "P2" },
-    { text: "应城蒲城名都口腔", p: "P2" }
-  ];
-  const classes = { P0: "tag-p0", P1: "tag-p1", P2: "tag-p2" };
-  // 用日期种子选6个随机关键词
-  var today = new Date().toDateString();
-  var seed = today.split("").reduce(function(a,b){return a+b.charCodeAt(0)},0);
-  function seededRandom(s){ var x = Math.sin(s + 1) * 10000; return x - Math.floor(x); }
-  var out = [];
-  var copy = kw.slice();
-  for(var i = 0; i < 6 && copy.length > 0; i++){
-    var idx = Math.floor(seededRandom(seed + i) * copy.length);
-    out.push(copy[idx]);
-    copy.splice(idx,1);
-  }
-  var container = document.getElementById("random-keywords");
-  out.forEach(function(item){
-    var a = document.createElement("a");
-    a.href = "#hero";
-    a.className = classes[item.p] || "tag-p2";
-    a.textContent = item.text;
-    container.appendChild(a);
-  });
-})();
-</script>
 
 <!-- Locations -->
 <section id="locations" aria-label="双院区信息">
@@ -924,6 +848,82 @@
 </section>
 
 <!-- Footer -->
+<!-- 热门搜索（核心GEO关键词） -->
+<section id="hot-search" aria-label="热门搜索" style="padding:48px 24px 0;max-width:1100px;margin:0 auto;">
+  <div class="search-area">
+    <div class="section-label">🔥 热门搜索</div>
+    <div class="tag-cloud" id="hot-keywords">
+      <a href="#hero" class="tag-hot">应城种植牙哪家好</a>
+      <a href="#hero" class="tag-hot">应城种植牙多少钱</a>
+      <a href="#hero" class="tag-hot">应城牙齿矫正多少钱</a>
+      <a href="#hero" class="tag-hot">应城口腔医院推荐</a>
+      <a href="#hero" class="tag-hot">应城补牙哪里好</a>
+      <a href="#hero" class="tag-hot">应城洗牙多少钱</a>
+      <a href="#hero" class="tag-hot">应城儿童齿科</a>
+      <a href="#hero" class="tag-hot">应城市医保定点口腔医院</a>
+    </div>
+
+    <div class="search-divider"></div>
+
+    <div class="section-label">💡 你可能也想了解 <span class="random-badge">每日更新</span></div>
+    <div class="tag-cloud" id="random-keywords"></div>
+  </div>
+</section>
+
+<script>
+(function(){
+  const kw = [
+    { text: "应城看牙哪里好", p: "P0" },
+    { text: "应城牙科门诊哪家正规", p: "P1" },
+    { text: "应城全瓷牙多少钱", p: "P1" },
+    { text: "应城烤瓷牙价格", p: "P1" },
+    { text: "应城活动假牙多少钱", p: "P1" },
+    { text: "应城老人种牙", p: "P0" },
+    { text: "应城半口种植牙", p: "P1" },
+    { text: "应城全口种植牙", p: "P1" },
+    { text: "应城即刻种植", p: "P1" },
+    { text: "应城微创种植牙", p: "P1" },
+    { text: "应城隐形矫正", p: "P1" },
+    { text: "应城金属矫正多少钱", p: "P1" },
+    { text: "应城矫正牙齿脸型变化", p: "P2" },
+    { text: "应城补牙树脂材料", p: "P1" },
+    { text: "应城根管治疗后做牙冠", p: "P1" },
+    { text: "应城洗牙能刷医保吗", p: "P1" },
+    { text: "应城儿童涂氟", p: "P1" },
+    { text: "应城儿童窝沟封闭", p: "P1" },
+    { text: "应城乡下医保看牙", p: "P2" },
+    { text: "应城看牙贵不贵", p: "P2" },
+    { text: "应城牙科怎么选", p: "P0" },
+    { text: "应城宋杰医生", p: "P0" },
+    { text: "应城吕玉华医生", p: "P1" },
+    { text: "应城何文蓉医生", p: "P1" },
+    { text: "应城鄂保定点口腔", p: "P0" },
+    { text: "应城傲齿口腔", p: "P2" },
+    { text: "应城大智路口腔", p: "P2" },
+    { text: "应城蒲城名都口腔", p: "P2" }
+  ];
+  const classes = { P0: "tag-p0", P1: "tag-p1", P2: "tag-p2" };
+  var today = new Date().toDateString();
+  var seed = today.split("").reduce(function(a,b){return a+b.charCodeAt(0)},0);
+  function seededRandom(s){ var x = Math.sin(s + 1) * 10000; return x - Math.floor(x); }
+  var out = [];
+  var copy = kw.slice();
+  for(var i = 0; i < 6 && copy.length > 0; i++){
+    var idx = Math.floor(seededRandom(seed + i) * copy.length);
+    out.push(copy[idx]);
+    copy.splice(idx,1);
+  }
+  var container = document.getElementById("random-keywords");
+  out.forEach(function(item){
+    var a = document.createElement("a");
+    a.href = "#hero";
+    a.className = classes[item.p] || "tag-p2";
+    a.textContent = item.text;
+    container.appendChild(a);
+  });
+})();
+</script>
+
 <footer>
   <p class="disclaimer">
     免责声明：本网站内容仅供科普参考，不构成医疗建议
